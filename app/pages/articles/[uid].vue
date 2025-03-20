@@ -34,19 +34,7 @@ definePageMeta({
 })
 
 useHead({
-  title: computed(() =>
-    prismic.asText(article.value?.data.meta_title) || // Use Prismic meta_title if available
-    prismic.asText(article.value?.data.title) || // Fallback to article title
-    "Luxe Life Digest"
-  ),
-  meta: [
-    {
-      name: "description",
-      content: computed(() =>
-        prismic.asText(article.value?.data.meta_description) || "Default meta description"
-      )
-    }
-  ]
+  title: computed(() => `${prismic.asText(article.value?.data.title)} | ${prismic.asText(settings.value?.data.name)}`)
 })
 
 const formatDate = (article: Content.ArticleDocument | null) => {
