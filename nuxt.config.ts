@@ -1,3 +1,4 @@
+import { defineNuxtConfig } from 'nuxt/config'
 import { repositoryName } from './slicemachine.config.json'
 
 // https://nuxt.com/docs/api/configuration/nuxt-config
@@ -10,7 +11,7 @@ export default defineNuxtConfig({
 
   app: {
     head: {
-      title: 'Prismic + Nuxt blog example',
+      title: 'Luxe Life Digest - Your Ultimate Blog',
       htmlAttrs: {
         lang: 'en'
       },
@@ -20,7 +21,7 @@ export default defineNuxtConfig({
         {
           hid: 'description',
           name: 'description',
-          content: 'Prismic + Nuxt blog example'
+          content: 'Discover the best in lifestyle, travel, and wellness with Luxe Life Digest.'
         },
         { name: 'format-detection', content: 'telephone=no' }
       ],
@@ -38,13 +39,12 @@ export default defineNuxtConfig({
   ],
 
   modules: [
-    '@nuxt/eslint',
     '@nuxtjs/prismic',
     '@nuxtjs/tailwindcss'
   ],
 
   prismic: {
-endpoint: 'https://luxelifedigest.cdn.prismic.io/api/v2',
+    endpoint: `https://${repositoryName}.cdn.prismic.io/api/v2`,
     preview: '/api/preview',
     clientConfig: {
       routes: [

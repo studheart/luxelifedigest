@@ -3,6 +3,6 @@
     "./app/slices"
   ],
   "adapter": "@slicemachine/adapter-nuxt",
-  "repositoryName": "nextjs-starter-prismic-blog",
+  "repositoryName": "luxelifedigest",
   "localSliceSimulatorURL": "http://localhost:3000/slice-simulator"
 }
